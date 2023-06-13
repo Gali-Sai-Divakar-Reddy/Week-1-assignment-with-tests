@@ -9,7 +9,45 @@
 */
 
 function calculateTotalSpentByCategory(transactions) {
-  return [];
+  var result = []
+  // var food = {
+  //   category: 'Food',
+  //   totalSpent: 0
+  // }
+  // var clothing = {
+  //   category: 'Clothing',
+  //   totalSpent: 0
+  // }
+  // var electronics = {
+  //   category: 'Electronics',
+  //   totalSpent: 0
+  // }
+  var foodExp = 0
+  var clothingExp = 0
+  var electronicsExp = 0
+
+  transactions.forEach((transaction) => {
+    if (transaction.category == 'Food'){
+      foodExp += transaction.price
+    }
+    else if (transaction.category == 'Clothing'){
+      clothingExp += transaction.price
+    }
+    else if (transaction.category == 'Electronics'){
+      electronicsExp += transaction.price
+    } 
+  });
+
+  if (foodExp > 0){
+    result.push({category: 'Food', totalSpent: foodExp})
+  }
+  if (clothingExp > 0){
+    result.push({category: 'Clothing', totalSpent: clothingExp})
+  }
+  if (electronicsExp > 0){
+    result.push({category: 'Electronics', totalSpent: electronicsExp})
+  }
+  return result
 }
 
 module.exports = calculateTotalSpentByCategory;
