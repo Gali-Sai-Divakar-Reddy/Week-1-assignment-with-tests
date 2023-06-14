@@ -4,5 +4,11 @@
  */
 
 function sleep (seconds) {
+    const startTime = Date.now();
+    while(Date.now() - startTime < seconds) {
 
+    }
 }
+
+sleep(8 * 1000)
+console.log("Hello world")
